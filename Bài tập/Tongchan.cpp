@@ -21,10 +21,9 @@ int Tong(int a[], int n)
 {
 	if (n == 0)
 		return 0;
-	int s = Tong(a, n - 1);
 	if (a[n - 1] % 2 == 0)
-		s = s + a[n - 1];
-	return s;
+		return Tong(a,n-1) + a[n-1];
+	return Tong(a,n-1);
 }
 
 int main()
