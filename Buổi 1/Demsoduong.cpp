@@ -17,11 +17,12 @@ void Xuat(int a[], int n)
 }
 int Dem(int a[], int n)
 {
-	int d = 0;
-	for (int i = 0; i < n; i++)
-		if (a[i] > 0)
-			d++;
-		return d;
+	if (n == 0)
+		return 0;
+	int d = Dem(a, n - 1);
+	if (a[n - 1] > 0)
+		return 1 + Dem(a, n - 1);
+	return Dem(a, n - 1);
 }
 int main()
 {
